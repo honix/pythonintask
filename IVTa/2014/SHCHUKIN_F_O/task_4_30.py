@@ -20,16 +20,34 @@ born_place = 'Рим, Лацио, Италия'
 born_year = 1880
 death_year = 1914
 death_oldness = death_year - born_year
-    
+
 print(real_name + ' \nболее известный под псевдонимом '
-      + imaginary_name + '.\n')
+              + imaginary_name + '.')
 
-print('Место рождения: ' + str(born_place))
+print('''
+Нажмите чтобы вывести на экран:
+1 - Место рождения,
+2 - Год рождения,
+3 - Возраст при смерти,
+4 - Область интересов,
+5 - Выход из программы\n\n''')
 
-print('Год рождения: ' + str(born_year))
+while True:
+    try:
+        choose = int(input('Ввод: '))
+    except:
+        print('Неправильный ввод')
+        choose = 0
 
-print('Возраст при смерти: ' + str(death_oldness))
+    if choose == 1:
+        print('Место рождения: ' + str(born_place))
+    elif choose == 2:
+        print('Год рождения: ' + str(born_year))
+    elif choose == 3:
+        print('Возраст при смерти: ' + str(death_oldness))
+    elif choose == 4:
+        print('Область интересов: ' + ' '.join(interests))
+    elif choose == 5:
+        break
 
-print('Область интересов: ' + ' '.join(interests))
-
-input('\n'*2 + 'Нажмите enter...')
+input('\nНажмите enter...')
