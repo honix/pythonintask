@@ -33,5 +33,3 @@ print('Возраст при смерти: ' + str(death_oldness))
 print('Область интересов: ' + ' '.join(interests))
 
 input('\n'*2 + 'Нажмите enter...')
-
-
