@@ -1,4 +1,4 @@
-﻿# Задача 5. Вариант 30.
+# Задача 5. Вариант 30.
 '''
 Напишите программу, которая бы при запуске случайным образом
 отображала имя одного из трех племянников Скруджа МакДака.
@@ -14,18 +14,21 @@ nephews = [''.join(filter(str.isalpha, name))
            for name in phrase.split(' ')
            if len(name) > 2]
 
-stats = [0, 0, 0]
+stats = dict((nephew, 0) for nephew in nephews)
+
+print("Случайный племянник Скруджа МакДака.")
 
 k = 1
 while True:
     c = choice(nephews)
-    stats[nephews.index(c)] += 1
+    stats[c] += 1
     k -= 1
     if k <= 0:
         print('\n' + c)
         print('Статистика ' + str(stats))
         try:
-            k = int(input('Повторить n раз: '))
+            k = int(input('Повторить n раз (0 чтобы выйти): '))
+            if k <= 0:
+                break
         except:
             continue
-
