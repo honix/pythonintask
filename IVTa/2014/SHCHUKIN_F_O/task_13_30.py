@@ -36,13 +36,6 @@ def print_board (board):
 
 
 def check_board (board, silent=False):
-  # draw
-  if 0 not in board:
-    if not silent:
-      print_board(board)
-      print('draw!')
-    return True
-
   # vertically
   for row in range(size):
     if board[row] in [1, 2]:
@@ -87,6 +80,13 @@ def check_board (board, silent=False):
           print_board(board)
           print('x' if board[row] == 1 else 'o', 'is winner!')
         return True
+
+  # draw
+  if 0 not in board:
+    if not silent:
+      print_board(board)
+      print('draw!')
+    return True
 
 
 print('\nWelcome! Make your turns like this - \'2a\' or \'4d\'')
